@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ *  DESIGN TOKENS — "THE THREAD"
+ *  Dark · Cinematic · Futuristic · Premium
+ * ------------------------------------------------------------------ */
+@theme {
+  /* — Surfaces — */
+  --color-ink: #05060b; /* deepest page background */
+  --color-abyss: #070810; /* secondary background */
+  --color-surface: #0b0d16; /* panel background */
+  --color-surface-2: #10121f; /* raised panel */
+
+  /* — Accents (the "ignition" palette) — */
+  --color-mint: #6ee7d8; /* primary luminous accent */
+  --color-cyan: #57e0ff; /* cool highlight */
+  --color-violet: #8b7cf6; /* fog / depth */
+  --color-amber: #f5b981; /* warm ignition accent */
+  --color-rose: #ff8fa3; /* rare warm pop */
+
+  /* — Text — */
+  --color-hi: #edeff7; /* high-emphasis text */
+  --color-mid: #b6bccf; /* body text */
+  --color-lo: #7b8199; /* muted / captions */
+
+  /* — Lines — */
+  --color-line: #ffffff14;
+  --color-line-strong: #ffffff26;
+
+  /* — Typography — */
+  --font-display: var(--font-display-latin);
+  --font-body: var(--font-body-latin);
+  --font-fa: var(--font-fa-family);
+
+  /* — Radius — */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* — Easing — */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* — Fluid type scale — */
+  --text-display: clamp(3rem, 9vw, 9rem);
+  --text-h1: clamp(2.25rem, 6vw, 5rem);
+  --text-h2: clamp(1.75rem, 4vw, 3.25rem);
+  --text-lead: clamp(1.05rem, 1.6vw, 1.5rem);
+}
+
+/* Persian locale swaps every typeface to Vazirmatn */
+:root[data-locale="fa"] {
+  --font-display: var(--font-fa-family);
+  --font-body: var(--font-fa-family);
+}
+
+/* ------------------------------------------------------------------ *
+ *  BASE
+ * ------------------------------------------------------------------ */
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-mid);
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-mint) 30%, transparent);
+  color: var(--color-hi);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-hi);
+  font-weight: 400; /* Instrument Serif ships a single weight */
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+/* Persian headings need the variable weight to carry the same presence */
+:root[data-locale="fa"] h1,
+:root[data-locale="fa"] h2,
+:root[data-locale="fa"] h3,
+:root[data-locale="fa"] h4 {
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+/* Fine-pointer devices hide the native cursor in favour of the custom one */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ *  LENIS SMOOTH SCROLL
+ * ------------------------------------------------------------------ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ *
+ *  UTILITIES
+ * ------------------------------------------------------------------ */
+@layer utilities {
+  .glass {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-surface) 78%, transparent),
+      color-mix(in srgb, var(--color-abyss) 72%, transparent)
+    );
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--color-line);
+    box-shadow:
+      inset 0 1px 0 0 #ffffff14,
+      0 30px 80px -40px #000000cc;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      100deg,
+      var(--color-hi) 0%,
+      var(--color-mint) 55%,
+      var(--color-cyan) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-mint {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-mint) 40%, transparent),
+      0 0 40px -6px color-mix(in srgb, var(--color-mint) 55%, transparent);
+  }
+
+  /* thin uppercase eyebrow label */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--color-lo);
+  }
+  :root[data-locale="fa"] .eyebrow {
+    letter-spacing: 0.12em;
+  }
+
+  .container-x {
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 5rem);
+  }
+
+  /* film-grain overlay */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ *  KEYFRAMES
+ * ------------------------------------------------------------------ */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes scroll-hint {
+  0% { transform: translateY(0); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+/* ------------------------------------------------------------------ *
+ *  REDUCED MOTION
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
