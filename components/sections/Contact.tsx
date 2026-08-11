@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,29 +11,54 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import { profile } from "@/content/profile";
 
 const schema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10),
+  name: z.string().trim().min(2),
+  email: z.string().trim().email(),
+  message: z.string().trim().min(10),
+  /** Honeypot — hidden from people, irresistible to bots. */
+  company: z.string().max(0).optional(),
 });
 type FormValues = z.infer<typeof schema>;
+
+type Status = "idle" | "sent" | "error" | "unconfigured" | "rate_limited";
 
 const fieldCls =
   "w-full border-b border-[var(--color-line)] bg-transparent py-3 text-[var(--color-hi)] outline-none transition-colors duration-300 placeholder:text-[var(--color-lo)] focus:border-[var(--color-mint)]";
 
 export function Contact() {
   const { d } = useDict();
+  const [status, setStatus] = useState<Status>("idle");
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  // Phase 5 wires this to a real endpoint; for now it just resolves.
   const onSubmit = async (values: FormValues) => {
-    await new Promise((r) => setTimeout(r, 700));
-    console.info("contact form (not yet wired to an endpoint):", values);
-    reset();
+    setStatus("idle");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (res.ok) {
+        reset();
+        setStatus("sent");
+        return;
+      }
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      if (res.status === 503) setStatus("unconfigured");
+      else if (res.status === 429) setStatus("rate_limited");
+      else {
+        console.error("Contact form failed:", body.error ?? res.status);
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Contact form request failed:", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -103,18 +129,48 @@ export function Contact() {
                 )}
               </div>
 
+              {/* Honeypot — off-screen, skipped by keyboard and screen readers. */}
+              <input
+                {...register("company")}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
+              />
+
               <button
                 type="submit"
                 disabled={isSubmitting}
                 data-cursor="hover"
                 className="group relative w-full overflow-hidden rounded-full border border-[var(--color-mint)]/40 py-3.5 text-sm text-[var(--color-hi)] transition-colors duration-500 hover:bg-[var(--color-mint)]/10 disabled:opacity-50"
               >
-                {isSubmitting ? "…" : d.contact.send}
+                {isSubmitting ? d.contact.sending : d.contact.send}
               </button>
 
-              {isSubmitSuccessful && (
-                <p className="text-sm text-[var(--color-mint)]">✓</p>
-              )}
+              <p aria-live="polite" className="min-h-5 text-sm">
+                {status === "sent" && (
+                  <span className="text-[var(--color-mint)]">✓ {d.contact.sent}</span>
+                )}
+                {status === "error" && (
+                  <span className="text-[var(--color-rose)]">{d.contact.failed}</span>
+                )}
+                {status === "rate_limited" && (
+                  <span className="text-[var(--color-rose)]">{d.contact.tooMany}</span>
+                )}
+                {status === "unconfigured" && (
+                  <span className="text-[var(--color-rose)]">
+                    {d.contact.unconfigured}{" "}
+                    <a
+                      href={`mailto:${profile.email}`}
+                      dir="ltr"
+                      className="underline underline-offset-4"
+                    >
+                      {profile.email}
+                    </a>
+                  </span>
+                )}
+              </p>
             </form>
           </GlassPanel>
         </Reveal>

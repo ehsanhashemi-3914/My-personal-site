@@ -68,12 +68,12 @@ export function Cursor() {
       <div
         ref={dotRef}
         style={{ opacity: 0 }}
-        className="pointer-events-none fixed left-0 top-0 z-[80] h-1.5 w-1.5 rounded-full bg-[var(--color-mint)] mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-[200] h-1.5 w-1.5 rounded-full bg-[var(--color-mint)] mix-blend-difference"
       />
       <div
         ref={ringRef}
         style={{ opacity: 0 }}
-        className="pointer-events-none fixed left-0 top-0 z-[80] h-9 w-9 rounded-full border border-white/40 transition-[opacity] duration-500 will-change-transform"
+        className="pointer-events-none fixed left-0 top-0 z-[200] h-9 w-9 rounded-full border border-white/40 transition-[opacity] duration-500 will-change-transform"
       />
     </>
   );

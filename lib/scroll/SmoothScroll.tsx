@@ -15,6 +15,7 @@ function LenisBridge() {
   const setScrollProgress = useStore((s) => s.setScrollProgress);
   const ready = useStore((s) => s.ready);
   const menuOpen = useStore((s) => s.menuOpen);
+  const dialogOpen = useStore((s) => s.dialogOpen);
 
   const lenis = useLenis((instance) => {
     setScrollProgress(instance.progress ?? 0);
@@ -32,12 +33,12 @@ function LenisBridge() {
     };
   }, [lenis]);
 
-  // Lock while the preloader is up or the menu is open.
+  // Lock while the preloader is up, the menu is open, or a dialog is showing.
   useEffect(() => {
     if (!lenis) return;
-    if (ready && !menuOpen) lenis.start();
+    if (ready && !menuOpen && !dialogOpen) lenis.start();
     else lenis.stop();
-  }, [lenis, ready, menuOpen]);
+  }, [lenis, ready, menuOpen, dialogOpen]);
 
   return null;
 }

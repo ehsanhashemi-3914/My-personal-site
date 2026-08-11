@@ -14,23 +14,23 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export function Works() {
   const { d, locale } = useDict();
   const [active, setActive] = useState<Work | null>(null);
-  const setMenuOpen = useStore((s) => s.setMenuOpen);
+  const setDialogOpen = useStore((s) => s.setDialogOpen);
 
   const close = useCallback(() => setActive(null), []);
 
-  // Escape closes the detail view; scrolling stays locked while it is open.
+  // Escape closes the detail view; scrolling stays frozen while it is open.
   useEffect(() => {
     if (!active) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
     };
     window.addEventListener("keydown", onKey);
-    setMenuOpen(true); // reuses the existing scroll lock
+    setDialogOpen(true);
     return () => {
       window.removeEventListener("keydown", onKey);
-      setMenuOpen(false);
+      setDialogOpen(false);
     };
-  }, [active, close, setMenuOpen]);
+  }, [active, close, setDialogOpen]);
 
   return (
     <>

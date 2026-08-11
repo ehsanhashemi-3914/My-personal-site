@@ -27,6 +27,9 @@ interface AppState {
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
   toggleMenu: () => void;
+  /** Any modal/dialog that must freeze the page without opening the nav menu. */
+  dialogOpen: boolean;
+  setDialogOpen: (open: boolean) => void;
   activeSection: SectionId;
   setActiveSection: (id: SectionId) => void;
 
@@ -50,6 +53,8 @@ export const useStore = create<AppState>((set, get) => ({
   menuOpen: false,
   setMenuOpen: (menuOpen) => set({ menuOpen }),
   toggleMenu: () => set({ menuOpen: !get().menuOpen }),
+  dialogOpen: false,
+  setDialogOpen: (dialogOpen) => set({ dialogOpen }),
   activeSection: "hero",
   setActiveSection: (activeSection) => set({ activeSection }),
 
