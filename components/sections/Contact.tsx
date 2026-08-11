@@ -38,7 +38,7 @@ export function Contact() {
   return (
     <SectionShell
       id="contact"
-      index="07"
+      index="06"
       eyebrow={d.contact.eyebrow}
       title={d.contact.title}
       lead={d.contact.lead}
@@ -121,16 +121,30 @@ export function Contact() {
 
         <Reveal delay={0.08}>
           <GlassPanel className="flex h-full flex-col justify-between gap-8 p-8">
-            <div>
-              <p className="eyebrow">Email</p>
-              <a
-                href={`mailto:${profile.email}`}
-                dir="ltr"
-                data-cursor="hover"
-                className="mt-2 block font-[family-name:var(--font-display)] text-xl text-[var(--color-hi)] underline-offset-4 hover:underline"
-              >
-                {profile.email}
-              </a>
+            <div className="space-y-7">
+              <div>
+                <p className="eyebrow">{d.contact.emailLabel}</p>
+                <a
+                  href={`mailto:${profile.email}`}
+                  dir="ltr"
+                  data-cursor="hover"
+                  className="mt-2 block w-fit font-[family-name:var(--font-display)] text-xl text-[var(--color-hi)] underline-offset-4 hover:underline"
+                >
+                  {profile.email}
+                </a>
+              </div>
+
+              <div>
+                <p className="eyebrow">{d.contact.phoneLabel}</p>
+                <a
+                  href={`tel:${profile.phone.tel}`}
+                  dir="ltr"
+                  data-cursor="hover"
+                  className="mt-2 block w-fit font-[family-name:var(--font-display)] text-xl tabular-nums text-[var(--color-hi)] underline-offset-4 hover:underline"
+                >
+                  {profile.phone.display}
+                </a>
+              </div>
             </div>
 
             <a

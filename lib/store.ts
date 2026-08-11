@@ -8,7 +8,6 @@ export type SectionId =
   | "journey"
   | "skills"
   | "projects"
-  | "github"
   | "social"
   | "contact";
 

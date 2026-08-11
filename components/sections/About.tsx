@@ -4,6 +4,7 @@ import { useDict, pick } from "@/lib/i18n/useDict";
 import { SectionShell } from "./SectionShell";
 import { Reveal } from "@/components/ui/Reveal";
 import { GlassPanel } from "@/components/ui/GlassPanel";
+import { Portrait } from "@/components/ui/Portrait";
 import { profile } from "@/content/profile";
 
 export function About() {
@@ -38,28 +39,34 @@ export function About() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.18}>
-          <GlassPanel className="p-8">
-            <div className="grid gap-7">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <p
-                    className={
-                      s.wide
-                        ? "font-[family-name:var(--font-display)] text-lg text-[var(--color-hi)]"
-                        : "font-[family-name:var(--font-display)] text-4xl text-[var(--color-hi)]"
-                    }
-                  >
-                    {s.value}
-                  </p>
-                  <p className="mt-1.5 text-xs uppercase tracking-[0.18em] text-[var(--color-lo)]">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-        </Reveal>
+        <div className="space-y-6">
+          <Reveal delay={0.18}>
+            <Portrait />
+          </Reveal>
+
+          <Reveal delay={0.24}>
+            <GlassPanel className="p-8">
+              <div className="grid gap-7 sm:grid-cols-3 lg:grid-cols-1">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <p
+                      className={
+                        s.wide
+                          ? "font-[family-name:var(--font-display)] text-lg text-[var(--color-hi)]"
+                          : "font-[family-name:var(--font-display)] text-4xl text-[var(--color-hi)]"
+                      }
+                    >
+                      {s.value}
+                    </p>
+                    <p className="mt-1.5 text-xs uppercase tracking-[0.18em] text-[var(--color-lo)]">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          </Reveal>
+        </div>
       </div>
     </SectionShell>
   );

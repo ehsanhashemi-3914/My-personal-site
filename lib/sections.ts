@@ -7,7 +7,6 @@ export const SECTION_IDS: SectionId[] = [
   "journey",
   "skills",
   "projects",
-  "github",
   "social",
   "contact",
 ];

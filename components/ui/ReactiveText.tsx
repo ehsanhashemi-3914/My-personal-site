@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
 /**
- * Splits text into characters that individually respond to the cursor — each
- * glyph lifts, brightens and drifts as the pointer passes over it, so headlines
- * feel like a surface you can disturb rather than a printed image.
+ * Text that responds to the cursor: each piece lifts and brightens as the
+ * pointer passes over it, so headlines feel like a surface you can disturb.
+ *
+ * Granularity depends on the script. Latin splits per character. Persian and
+ * Arabic are cursive — their glyphs change shape depending on their neighbours,
+ * and splitting a word into separate elements breaks both that shaping and the
+ * bidirectional ordering. Those scripts therefore split per word, which keeps
+ * every word intact while still reacting to the pointer.
  */
 export function ReactiveText({
   text,
@@ -19,6 +25,8 @@ export function ReactiveText({
   radius?: number;
   lift?: number;
 }) {
+  const locale = useStore((s) => s.locale);
+  const perWord = locale === "fa";
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -27,9 +35,9 @@ export function ReactiveText({
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-    const chars = Array.from(
-      host.querySelectorAll<HTMLElement>("[data-char]"),
-    );
+    const parts = Array.from(host.querySelectorAll<HTMLElement>("[data-part]"));
+    if (!parts.length) return;
+
     let raf = 0;
     let pointerX = -9999;
     let pointerY = -9999;
@@ -40,12 +48,11 @@ export function ReactiveText({
     };
 
     const render = () => {
-      for (const el of chars) {
+      for (const el of parts) {
         const r = el.getBoundingClientRect();
         const dx = pointerX - (r.left + r.width / 2);
         const dy = pointerY - (r.top + r.height / 2);
-        const dist = Math.hypot(dx, dy);
-        const force = Math.max(0, 1 - dist / radius);
+        const force = Math.max(0, 1 - Math.hypot(dx, dy) / radius);
         const eased = force * force;
 
         el.style.transform = `translate3d(0, ${-eased * lift}px, 0)`;
@@ -60,25 +67,41 @@ export function ReactiveText({
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);
     };
-  }, [radius, lift, text]);
+  }, [radius, lift, text, perWord]);
+
+  const words = text.split(" ");
 
   return (
-    <span ref={ref} className={cn("inline-block", className)} aria-label={text}>
-      {text.split(" ").map((word, wi, words) => (
-        <span key={wi} className="inline-block whitespace-nowrap">
-          {Array.from(word).map((ch, ci) => (
-            <span
-              key={ci}
-              data-char
-              aria-hidden
-              className="inline-block will-change-transform [transition:opacity_.4s_ease]"
-            >
-              {ch}
-            </span>
-          ))}
-          {wi < words.length - 1 && <span aria-hidden>&nbsp;</span>}
-        </span>
-      ))}
+    <span ref={ref} className={cn("inline-block", className)}>
+      {/* The split-up copy is decorative; assistive tech reads this instead. */}
+      <span className="sr-only">{text}</span>
+
+      <span aria-hidden>
+        {words.map((word, wi) => (
+          <span key={wi} className="inline-block whitespace-nowrap">
+            {perWord ? (
+              /* Cursive script: the word stays one unbroken run of text. */
+              <span
+                data-part
+                className="inline-block will-change-transform [transition:opacity_.4s_ease]"
+              >
+                {word}
+              </span>
+            ) : (
+              Array.from(word).map((ch, ci) => (
+                <span
+                  key={ci}
+                  data-part
+                  className="inline-block will-change-transform [transition:opacity_.4s_ease]"
+                >
+                  {ch}
+                </span>
+              ))
+            )}
+            {wi < words.length - 1 && " "}
+          </span>
+        ))}
+      </span>
     </span>
   );
 }

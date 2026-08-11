@@ -13,7 +13,7 @@ export function Social() {
   return (
     <SectionShell
       id="social"
-      index="06"
+      index="05"
       eyebrow={d.social.eyebrow}
       title={d.social.title}
       lead={d.social.lead}
@@ -32,11 +32,14 @@ export function Social() {
               <span className="text-2xl text-[var(--color-mid)] transition-colors duration-500 group-hover:text-[var(--color-mint)]">
                 <SocialIcon id={s.id} />
               </span>
-              <span className="text-start">
+              <span className="w-full text-start">
                 <span className="block font-[family-name:var(--font-display)] text-lg text-[var(--color-hi)]">
                   {s.label}
                 </span>
-                <span className="mt-1 block text-sm text-[var(--color-lo)]">
+                <span
+                  dir={s.ltr ? "ltr" : undefined}
+                  className="mt-1 block truncate text-sm text-[var(--color-lo)] rtl:text-end"
+                >
                   {s.handle}
                 </span>
               </span>
