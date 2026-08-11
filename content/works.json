@@ -1,18 +1,155 @@
 [
   {
-    "slug": "sample-one",
-    "title": { "en": "Work sample one", "fa": "نمونه‌کار یک" },
-    "year": "1404",
+    "slug": "clothing-shop",
+    "title": {
+      "en": "Site-Shop",
+      "fa": "سایت فروشگاهی"
+    },
+    "year": "1405",
     "summary": {
-      "en": "Replace this with a one-line description of the piece.",
-      "fa": "این را با توضیح یک‌خطی نمونه‌کار جایگزین کنید."
+      "en": "Clothing store site.",
+      "fa": "سایت فروشگاهی پوشاک."
     },
     "description": {
-      "en": "The long description goes here: what the brief was, what you made, which tools you used, and what the result was.",
-      "fa": "توضیح کامل این‌جا می‌آید: صورت‌مسئله چه بود، چه ساختید، با چه ابزارهایی، و نتیجه چه شد."
+      "en": "This version is without backend; the actual order is not registered and no payment is made. All data is stored in the visitor's own browser.\n\nFor the real version, these are added: product and order management panel, payment gateway, warehouse and inventory, sending SMS, user account on the server, SEO.",
+      "fa": "این نسخه بدون بک‌اند است؛ سفارش واقعی ثبت نمی‌شود و پرداختی انجام نمی‌گیرد. همه داده‌ها در مرورگر خود بازدیدکننده ذخیره می‌شود.\n\nبرای نسخه واقعی این موارد اضافه می‌شود: پنل مدیریت محصول و سفارش، درگاه پرداخت، انبار و موجودی، ارسال پیامک، حساب کاربری روی سرور، سئو."
     },
-    "price": { "en": "From 2,500,000 T", "fa": "از ۲٬۵۰۰٬۰۰۰ تومان" },
-    "tags": ["Design", "Web"],
-    "accent": ["#6ee7d8", "#8b7cf6"]
+    "price": {
+      "en": "From $300",
+      "fa": "از ۲۵٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "Design",
+      "Web"
+    ],
+    "thumbnail": "/works/clothing-shop.png",
+    "link": "https://ehsanhashemi-3914.github.io/Shop/",
+    "accent": [
+      "#153c38",
+      "#8b7cf6"
+    ]
+  },
+  {
+    "slug": "neon-logic",
+    "title": {
+      "en": "Site-neon logic",
+      "fa": "سایت نمایشی نئون لاگین"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "Demo and live site.",
+      "fa": "سایت نمایشی و زنده."
+    },
+    "description": {
+      "en": "SynapseX is a single-page landing site for a concept neural-AI interface product, built as an exercise in motion-driven web design.\n\nThe entire page runs on a black-and-white monospace aesthetic with full-viewport video backgrounds, anchored by a hero video that the user scrubs frame-by-frame with horizontal mouse movement rather than watching it autoplay.\n\nBuilt with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.",
+      "fa": "SynapseX یک سایت فرود تک‌صفحه‌ای برای یک محصول رابط کاربری عصبی-هوش مصنوعی مفهومی است که به عنوان تمرینی در طراحی وب مبتنی بر حرکت ساخته شده است.\n\nکل صفحه با زیبایی‌شناسی تک‌فضای سیاه و سفید با پس‌زمینه‌های ویدیویی با نمای کامل اجرا می‌شود که توسط یک ویدیوی اصلی که کاربر فریم به فریم آن را با حرکت افقی ماوس پاک می‌کند، به جای تماشای پخش خودکار، تثبیت شده است.\n\nساخته شده با React، TypeScript، Vite، Tailwind CSS و Framer Motion."
+    },
+    "price": {
+      "en": "From $130",
+      "fa": "از ۱۰٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "React",
+      "TypeScript",
+      "Framer Motion"
+    ],
+    "thumbnail": "/works/neon-logic.jpg",
+    "link": "https://neon-logic.vercel.app/",
+    "accent": [
+      "#6ee7d8",
+      "#8b7cf6"
+    ]
+  },
+  {
+    "slug": "luxe-fire",
+    "title": {
+      "en": "LUXE FIRE",
+      "fa": "لوکس فایر"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "A website for restaurants and cafes with a high design.",
+      "fa": "سایت مخصوص رستوران و کافه‌ها با طراحی بالا."
+    },
+    "description": {
+      "en": "LUXE FIRE is a modern restaurant landing page designed to showcase a premium dining experience. I developed the frontend using HTML, CSS, and JavaScript with a focus on responsive design, smooth animations, and a visually engaging user interface.\n\nThe project features interactive sections, elegant typography, and a clean layout optimized for desktop and mobile devices. It demonstrates my ability to create high-quality, user-friendly websites with attention to detail and modern web design principles.",
+      "fa": "لوکس فایر یک صفحه فرود رستوران مدرن است که برای به نمایش گذاشتن یک تجربه غذاخوری ممتاز طراحی شده است. من بخش ظاهری را با استفاده از HTML، CSS و جاوااسکریپت با تمرکز بر طراحی واکنش‌گرا، انیمیشن‌های روان و یک رابط کاربری جذاب بصری توسعه دادم.\n\nاین پروژه دارای بخش‌های تعاملی، تایپوگرافی زیبا و طرح‌بندی تمیزِ بهینه‌شده برای دسکتاپ و موبایل است و توانایی من در ساختِ سایت‌های باکیفیت و کاربرپسند را نشان می‌دهد."
+    },
+    "price": {
+      "en": "From $150",
+      "fa": "از ۱۲٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "thumbnail": "/works/luxe-fire.jpg",
+    "link": "https://ehsanhashemi-3914.github.io/Luxe-Fire/",
+    "accent": [
+      "#f5b981",
+      "#ff8fa3"
+    ]
+  },
+  {
+    "slug": "next-ai",
+    "title": {
+      "en": "Site-Next AI",
+      "fa": "سایت Next AI"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "A highly designed demo site suitable for business.",
+      "fa": "سایت دمو با طراحی بالا، مناسب برای کسب‌وکار."
+    },
+    "description": {
+      "en": "Next AI is a modern landing page concept designed for an AI product. I built the frontend using Next.js and TypeScript with a strong focus on clean UI, smooth animations, responsive design, and user experience.\n\nThe project showcases modern layouts, interactive components, and visually appealing effects, demonstrating my frontend development skills and attention to detail.",
+      "fa": "Next AI یک مفهوم مدرن برای صفحه فرود است که برای یک محصول هوش مصنوعی طراحی شده است. من رابط کاربری را با Next.js و TypeScript ساختم، با تمرکز قوی بر رابطِ تمیز، انیمیشن‌های روان، طراحی واکنش‌گرا و تجربه‌ی کاربری.\n\nاین پروژه طرح‌بندی‌های مدرن، اجزای تعاملی و جلوه‌های بصری جذاب را به نمایش می‌گذارد."
+    },
+    "price": {
+      "en": "From $180",
+      "fa": "از ۱۴٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "Next.js",
+      "TypeScript"
+    ],
+    "thumbnail": "/works/next-ai.jpg",
+    "link": "https://next-ai-mu-seven.vercel.app/",
+    "accent": [
+      "#57e0ff",
+      "#6ee7d8"
+    ]
+  },
+  {
+    "slug": "nova-market",
+    "title": {
+      "en": "Site Nova Market",
+      "fa": "سایت Nova Market"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "Nova Market website with high design.",
+      "fa": "سایت نوا مارکت با طراحی بالا."
+    },
+    "description": {
+      "en": "Nova Market is a modern and responsive e-commerce landing page built with HTML, CSS, and JavaScript.\n\nThe project focuses on creating a clean user interface, smooth user experience, and fully responsive design across desktop, tablet, and mobile devices.",
+      "fa": "نوا مارکت یک صفحه فرود تجارت الکترونیک مدرن و واکنش‌گراست که با HTML، CSS و جاوااسکریپت ساخته شده است.\n\nاین پروژه بر ایجاد یک رابط کاربری تمیز، تجربه‌ی کاربری روان و طراحی کاملاً واکنش‌گرا روی دسکتاپ، تبلت و موبایل تمرکز دارد."
+    },
+    "price": {
+      "en": "From $250",
+      "fa": "از ۱۶٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "thumbnail": "/works/nova-market.jpg",
+    "link": "https://ehsanhashemi-3914.github.io/NovaMarket/",
+    "accent": [
+      "#8b7cf6",
+      "#57e0ff"
+    ]
   }
 ]

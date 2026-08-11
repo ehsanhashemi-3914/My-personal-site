@@ -39,7 +39,6 @@ export function Works() {
         index="04"
         eyebrow={d.works.eyebrow}
         title={d.works.title}
-        lead={d.works.lead}
       >
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {works.map((w, i) => (
@@ -84,7 +83,7 @@ export function Works() {
                     </span>
                     <span className="text-xs text-[var(--color-lo)]">{w.year}</span>
                   </span>
-                  <span className="mt-2 block text-sm leading-relaxed text-[var(--color-lo)]">
+                  <span className="mt-2 block whitespace-pre-line text-sm leading-relaxed text-[var(--color-lo)]">
                     {pick(w.summary, locale)}
                   </span>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--color-mint)] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
@@ -159,7 +158,7 @@ export function Works() {
                   <span className="text-sm text-[var(--color-lo)]">{active.year}</span>
                 </div>
 
-                <p className="mt-5 leading-relaxed text-[var(--color-mid)]">
+                <p className="mt-5 whitespace-pre-line leading-relaxed text-[var(--color-mid)]">
                   {pick(active.description, locale)}
                 </p>
 

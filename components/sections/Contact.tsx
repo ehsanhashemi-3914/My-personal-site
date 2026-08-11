@@ -203,14 +203,16 @@ export function Contact() {
               </div>
             </div>
 
-            <a
-              href={profile.resumeUrl}
-              download
-              data-cursor="hover"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-line-strong)] py-3.5 text-sm text-[var(--color-hi)] transition-colors duration-500 hover:border-[var(--color-mint)]/50 hover:bg-white/5"
-            >
-              ↓ {d.contact.resume}
-            </a>
+            {profile.resumeUrl && (
+              <a
+                href={profile.resumeUrl}
+                download
+                data-cursor="hover"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-line-strong)] py-3.5 text-sm text-[var(--color-hi)] transition-colors duration-500 hover:border-[var(--color-mint)]/50 hover:bg-white/5"
+              >
+                ↓ {d.contact.resume}
+              </a>
+            )}
           </GlassPanel>
         </Reveal>
       </div>

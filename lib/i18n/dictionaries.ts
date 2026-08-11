@@ -64,7 +64,6 @@ const en = {
   works: {
     eyebrow: "Portfolio",
     title: "Work samples",
-    lead: "A selection of pieces I've made. Open any one to read the details and its price.",
     view: "View sample",
     close: "Close",
     price: "Price",
@@ -159,7 +158,6 @@ const fa: typeof en = {
   works: {
     eyebrow: "نمونه‌کار",
     title: "نمونه‌کارهای من",
-    lead: "گزیده‌ای از کارهایی که انجام داده‌ام. روی هرکدام بزنید تا توضیحات و قیمتش را ببینید.",
     view: "دیدنِ نمونه‌کار",
     close: "بستن",
     price: "قیمت",
