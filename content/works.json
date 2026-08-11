@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "sample-one",
+    "title": { "en": "Work sample one", "fa": "نمونه‌کار یک" },
+    "year": "1404",
+    "summary": {
+      "en": "Replace this with a one-line description of the piece.",
+      "fa": "این را با توضیح یک‌خطی نمونه‌کار جایگزین کنید."
+    },
+    "description": {
+      "en": "The long description goes here: what the brief was, what you made, which tools you used, and what the result was.",
+      "fa": "توضیح کامل این‌جا می‌آید: صورت‌مسئله چه بود، چه ساختید، با چه ابزارهایی، و نتیجه چه شد."
+    },
+    "price": { "en": "From 2,500,000 T", "fa": "از ۲٬۵۰۰٬۰۰۰ تومان" },
+    "tags": ["Design", "Web"],
+    "accent": ["#6ee7d8", "#8b7cf6"]
+  }
+]

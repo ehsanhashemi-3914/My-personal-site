@@ -19,11 +19,19 @@ export function ReactiveText({
   className,
   radius = 130,
   lift = 14,
+  gradient = false,
 }: {
   text: string;
   className?: string;
   radius?: number;
   lift?: number;
+  /**
+   * Paint the gradient on each piece rather than on an ancestor. The pieces are
+   * inline-block (transforms need a block box), and `background-clip: text` on a
+   * parent paints nothing through inline-block children — the text would simply
+   * disappear. Applying it per piece is what actually renders.
+   */
+  gradient?: boolean;
 }) {
   const locale = useStore((s) => s.locale);
   const perWord = locale === "fa";
@@ -83,7 +91,10 @@ export function ReactiveText({
               /* Cursive script: the word stays one unbroken run of text. */
               <span
                 data-part
-                className="inline-block will-change-transform [transition:opacity_.4s_ease]"
+                className={cn(
+                  "inline-block will-change-transform [transition:opacity_.4s_ease]",
+                  gradient && "text-gradient",
+                )}
               >
                 {word}
               </span>
@@ -92,7 +103,10 @@ export function ReactiveText({
                 <span
                   key={ci}
                   data-part
-                  className="inline-block will-change-transform [transition:opacity_.4s_ease]"
+                  className={cn(
+                    "inline-block will-change-transform [transition:opacity_.4s_ease]",
+                    gradient && "text-gradient",
+                  )}
                 >
                   {ch}
                 </span>

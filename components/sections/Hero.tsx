@@ -28,7 +28,7 @@ export function Hero() {
 
   const facts = [
     { label: d.hero.facts.based, value: pick(profile.location, locale) },
-    { label: d.hero.facts.focus, value: pick(profile.stats.stackLabel, locale) },
+    { label: d.hero.facts.focus, value: d.hero.facts.focusValue },
     { label: d.hero.facts.reply, value: d.hero.facts.replyValue },
   ];
 
@@ -38,18 +38,25 @@ export function Hero() {
       className="relative flex min-h-screen w-full items-center overflow-hidden py-28"
     >
       <div className="container-x w-full">
-        {/* availability + role */}
-        <motion.div {...rise(0.1)} className="flex flex-wrap items-center gap-x-5 gap-y-3">
+        {/* identity — name and role lead the page, before the headline */}
+        <motion.div {...rise(0.08)} className="flex flex-wrap items-center gap-x-5 gap-y-3">
           <span className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-line)] bg-white/[0.03] px-3.5 py-1.5 backdrop-blur-md">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-mint)] opacity-70" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-mint)]" />
             </span>
-            <span className="text-xs text-[var(--color-mid)]">
-              {d.hero.available}
+            <span className="text-xs text-[var(--color-mid)]">{d.hero.available}</span>
+          </span>
+
+          <span className="flex items-center gap-3">
+            <span className="font-[family-name:var(--font-display)] text-lg text-[var(--color-hi)]">
+              {pick(profile.name, locale)}
+            </span>
+            <span className="h-4 w-px bg-[var(--color-line-strong)]" />
+            <span className="text-sm text-[var(--color-lo)]">
+              {pick(profile.role, locale)}
             </span>
           </span>
-          <span className="eyebrow">{d.hero.eyebrow}</span>
         </motion.div>
 
         <h1 className="mt-8 text-[length:var(--text-display)]">
@@ -65,12 +72,12 @@ export function Hero() {
           </span>
           <span className="block overflow-hidden pb-2">
             <motion.span
-              className="text-gradient block italic"
+              className="block italic"
               initial={reduced ? undefined : { y: "110%" }}
               animate={show ? { y: 0 } : undefined}
               transition={{ duration: 1.2, ease: EASE, delay: 0.32 }}
             >
-              <ReactiveText text={d.hero.titleBottom} lift={18} />
+              <ReactiveText text={d.hero.titleBottom} lift={18} gradient />
             </motion.span>
           </span>
         </h1>
@@ -133,33 +140,20 @@ export function Hero() {
           ))}
         </motion.dl>
 
-        {/* identity + scroll cue */}
-        <motion.div
+        {/* scroll cue */}
+        <motion.button
           {...rise(0.86)}
-          className="mt-12 flex flex-wrap items-end justify-between gap-6"
+          onClick={() => scrollTo("about")}
+          data-cursor="hover"
+          className="group mt-12 flex items-center gap-3"
         >
-          <button
-            onClick={() => scrollTo("about")}
-            data-cursor="hover"
-            className="group flex items-center gap-3"
-          >
-            <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-[var(--color-line-strong)] pt-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-mint)] [animation:scroll-hint_2s_ease-in-out_infinite]" />
-            </span>
-            <span className="eyebrow transition-colors duration-300 group-hover:text-[var(--color-hi)]">
-              {d.hero.scroll}
-            </span>
-          </button>
-
-          <div className="text-start">
-            <p className="font-[family-name:var(--font-display)] text-lg text-[var(--color-hi)]">
-              {pick(profile.name, locale)}
-            </p>
-            <p className="mt-1 text-sm text-[var(--color-lo)]">
-              {pick(profile.role, locale)}
-            </p>
-          </div>
-        </motion.div>
+          <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-[var(--color-line-strong)] pt-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-mint)] [animation:scroll-hint_2s_ease-in-out_infinite]" />
+          </span>
+          <span className="eyebrow transition-colors duration-300 group-hover:text-[var(--color-hi)]">
+            {d.hero.scroll}
+          </span>
+        </motion.button>
       </div>
     </section>
   );
