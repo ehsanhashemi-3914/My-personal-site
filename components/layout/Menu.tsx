@@ -40,7 +40,12 @@ export function Menu() {
             </button>
           </div>
 
-          <nav className="container-x flex flex-1 flex-col justify-center gap-1">
+          <nav
+            // Short screens cannot fit every item; let this scroll natively
+            // rather than clipping, and keep Lenis out of its wheel events.
+            data-lenis-prevent
+            className="container-x flex flex-1 flex-col justify-center gap-1 overflow-y-auto py-6"
+          >
             {SECTION_IDS.map((id, i) => (
               <motion.button
                 key={id}

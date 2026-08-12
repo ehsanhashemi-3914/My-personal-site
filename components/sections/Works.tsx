@@ -116,6 +116,11 @@ export function Works() {
               role="dialog"
               aria-modal="true"
               aria-label={pick(active.title, locale)}
+              // Lenis captures wheel and touch globally, so without this the
+              // dialog's own overflow never receives them and only the
+              // scrollbar works. Lenis skips any event raised inside a marked
+              // subtree, even while the page scroll itself is frozen.
+              data-lenis-prevent
               initial={{ opacity: 0, y: 30, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.98 }}
