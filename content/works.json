@@ -151,5 +151,38 @@
       "#8b7cf6",
       "#57e0ff"
     ]
+  },
+  {
+    "slug": "cafe",
+    "title": {
+      "en": "cafe Restaurant ",
+      "fa": "سایت کافه رستوران"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "The site is suitable for cafes and restaurants with a high design.",
+      "fa": "سایت مناسب برای کافه ها و رستوران ها می‌باشد با طراحی بالا"
+    },
+    "description": {
+      "en": "Maison Ember\nA cinematic marketing site for a fictional restaurant: a dining room built inside a 1924 coal merchant's hall in the old quarter. Dark, warm, architectural — the design direction is historic soul × modern luxury.\n\nFully bilingual: English (LTR) and Persian / فارسی (RTL), with mirrored layout, a separate typographic scale, and Eastern Arabic numerals throughout.",
+      "fa": "Maison Ember\nیک سایت بازاریابی سینمایی برای یک رستوران خیالی: یک اتاق غذاخوری که در داخل یک سالن تاجر زغال سنگ مربوط به سال ۱۹۲۴ در محله قدیمی ساخته شده است. تاریک، گرم، معماری - جهت طراحی، روح تاریخی × تجمل مدرن است.\n\nکاملاً دو زبانه: انگلیسی (چپ به راست) و فارسی / فارسی (راست به چپ)، با طرح آینه‌ای، مقیاس تایپوگرافی جداگانه و اعداد عربی شرقی در سراسر صفحه."
+    },
+    "price": {
+      "en": "From 250$",
+      "fa": "از ۲۵٬۰۰۰٬۰۰۰ "
+    },
+    "tags": [
+      "TypeScript",
+      "strict",
+      "Next.js",
+      "Tailwind CSS v4",
+      "JavaScript"
+    ],
+    "thumbnail": "/works/cafe.png?v=1786988976597",
+    "link": "https://cafe-restaurant-delta.vercel.app/en",
+    "accent": [
+      "#6ee7d8",
+      "#8b7cf6"
+    ]
   }
 ]
