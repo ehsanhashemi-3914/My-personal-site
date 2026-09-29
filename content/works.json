@@ -1,5 +1,71 @@
 [
   {
+    "slug": "hills-connect",
+    "title": {
+      "en": "Hills Connect",
+      "fa": "هیلز کانکت"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "Member networking & smart matching platform with an admin panel.",
+      "fa": "پلتفرم شبکه‌سازی و مچینگ هوشمند اعضا، همراه با پنل مدیریت."
+    },
+    "description": {
+      "en": "An unofficial concept built for Hills Project (a content-creation school with ~2,800 members): members build a professional profile, get matched by skills and needs, and team up on collaborations — without a messenger.\n\nIncludes a 4-step onboarding, a swipe-to-match deck with transparent match reasons, natural-language Persian search, an opportunities board with fit scores, connection requests that reveal contact info only after acceptance, skill endorsements and portfolios.\n\nThe admin panel covers KPIs and charts (skill supply vs demand), member management (verify, feature, mentor, suspend, CSV export), opportunity moderation, announcements, cohorts and custom profile fields.\n\nThis demo runs fully in the browser; the real version adds a light REST backend, database, SMS and integration with the client's existing panel.",
+      "fa": "یک طرح پیشنهادی غیررسمی برای پروژه هیلز (مدرسه‌ی تولید محتوا با حدود ۲٬۸۰۰ عضو): اعضا پروفایل حرفه‌ای می‌سازن، بر اساس مهارت و نیازشون با هم مچ می‌شن و برای همکاری تیم می‌شن؛ بدون پیام‌رسان.\n\nشامل آنبوردینگ چهارمرحله‌ای، کارت‌های مچ (کشیدن به راست برای درخواست همکاری) با دلیل هر مچ، جستجوی هوشمند فارسی، برد فرصت‌ها با درصد تناسب، درخواست همکاری که راه ارتباطی رو فقط بعد از قبول نشون می‌ده، تأیید مهارت و نمونه‌کار.\n\nپنل مدیریت: داشبورد آمار و نمودار عرضه و تقاضای مهارت‌ها، مدیریت اعضا (تأیید، ویژه، منتور، تعلیق، خروجی اکسل)، تأیید فرصت‌ها، اطلاعیه، لانچ‌ها و فیلدهای سفارشی پروفایل.\n\nاین دمو کامل داخل مرورگر اجرا می‌شه؛ نسخه‌ی واقعی بک‌اند سبک، دیتابیس، پیامک و اتصال به پنل فعلی مشتری رو اضافه می‌کنه."
+    },
+    "price": {
+      "en": "From $500",
+      "fa": "از ۴۰٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "React",
+      "TypeScript",
+      "Framer Motion",
+      "Admin panel",
+      "Matching"
+    ],
+    "thumbnail": "/works/hills-connect.jpg",
+    "link": "https://hills-connect.vercel.app/",
+    "accent": [
+      "#c600e0",
+      "#9050fe"
+    ]
+  },
+  {
+    "slug": "hills-messenger",
+    "title": {
+      "en": "Hills Messenger",
+      "fa": "پیام‌رسان هیلز"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "A Telegram-style branded community messenger.",
+      "fa": "پیام‌رسان اختصاصی کامیونیتی به سبک تلگرام، با برند مشتری."
+    },
+    "description": {
+      "en": "An unofficial concept built for Hills Project: a private, branded community app with the structure of Telegram — official channel, groups, private chats, a content-assistant bot and a members directory.\n\nReplies (including swipe-to-reply), reactions, edit/delete/forward, pinned messages, images, files, voice messages, polls, typing indicators and read receipts, dark and light themes, a three-column desktop layout and a mobile layout.\n\nThe full version runs on a real-time Node.js + Socket.IO server; the public demo runs the same server logic inside the browser so it can be hosted statically.",
+      "fa": "یک طرح پیشنهادی غیررسمی برای پروژه هیلز: اپ کامیونیتی خصوصی با برند مشتری و ساختاری مثل تلگرام؛ کانال رسمی، گروه‌ها، چت خصوصی، ربات دستیار تولید محتوا و فهرست اعضا.\n\nپاسخ (همراه با کشیدن پیام برای ریپلای)، ری‌اکشن، ویرایش، حذف، بازارسال، سنجاق، عکس، فایل، پیام صوتی، نظرسنجی، «در حال نوشتن…» و تیک خوانده‌شدن، حالت شب و روز، چیدمان سه‌ستونه‌ی دسکتاپ و نسخه‌ی موبایل.\n\nنسخه‌ی کامل روی سرور زنده‌ی Node.js و Socket.IO اجرا می‌شه؛ دموی عمومی همون منطق سرور رو داخل مرورگر اجرا می‌کنه."
+    },
+    "price": {
+      "en": "From $750",
+      "fa": "از ۶۰٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Socket.IO",
+      "Realtime"
+    ],
+    "thumbnail": "/works/hills-messenger.jpg",
+    "link": "https://hilles-project.vercel.app/",
+    "accent": [
+      "#9050fe",
+      "#c600e0"
+    ]
+  },
+  {
     "slug": "clothing-shop",
     "title": {
       "en": "Site-Shop",
