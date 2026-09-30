@@ -18,10 +18,10 @@ export function Journey() {
     >
       <ol className="relative mt-16 border-s border-[var(--color-line)] ps-8 sm:ps-12">
         {journey.map((m, i) => (
-          <Reveal key={m.year} delay={i * 0.06} className="relative pb-14 last:pb-0">
+          <Reveal key={m.year.en} delay={i * 0.06} className="relative pb-14 last:pb-0">
             <span className="absolute -start-[calc(2rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-[var(--color-mint)] glow-mint sm:-start-[calc(3rem+5px)]" />
             <p className="font-[family-name:var(--font-display)] text-sm text-[var(--color-mint)]">
-              {m.year}
+              {pick(m.year, locale)}
             </p>
             <h3 className="mt-2 text-2xl">{pick(m.title, locale)}</h3>
             <p className="mt-3 max-w-xl leading-relaxed text-[var(--color-lo)]">

@@ -43,11 +43,11 @@ const en = {
   about: {
     eyebrow: "About",
     title: "Between design and code",
-    body: "I'm a developer who treats the browser like a stage. For years I've been chasing the point where engineering discipline meets cinematic emotion — interfaces that feel alive, react to presence, and stay effortless on every device.",
-    body2: "My work lives at the intersection of motion design, real-time 3D and front-end architecture. I care about frame budgets as much as I care about feelings.",
+    body: "I'm a developer who treats the browser like a stage. I chase the point where engineering discipline meets cinematic emotion — interfaces that feel alive, react to presence, and stay effortless on every device.",
+    body2: "I work with AI coding agents to move from idea to a live, clickable product fast — landing pages, admin panels and real-time apps. Every project below has a live link you can check.",
     stats: {
-      years: "Years crafting",
-      projects: "Projects shipped",
+      live: "Live projects",
+      repos: "GitHub repositories",
       stack: "Core stack",
     },
   },
@@ -137,11 +137,11 @@ const fa: typeof en = {
   about: {
     eyebrow: "درباره",
     title: "میانِ طراحی و کد",
-    body: "من توسعه‌دهنده‌ای هستم که مرورگر را مثل یک صحنه می‌بیند. سال‌هاست دنبال نقطه‌ای‌ام که نظمِ مهندسی به احساسِ سینمایی می‌رسد — رابط‌هایی که زنده‌اند، به حضور واکنش می‌دهند و روی هر دستگاهی روان می‌مانند.",
-    body2: "کار من در تلاقیِ موشن‌دیزاین، سه‌بعدیِ بلادرنگ و معماریِ فرانت‌اند است. به بودجه‌ی فریم به‌اندازه‌ی احساس اهمیت می‌دهم.",
+    body: "من توسعه‌دهنده‌ای هستم که مرورگر را مثل یک صحنه می‌بیند. دنبالِ نقطه‌ای‌ام که نظمِ مهندسی به احساسِ سینمایی می‌رسد — رابط‌هایی که زنده‌اند، به حضور واکنش می‌دهند و روی هر دستگاهی روان می‌مانند.",
+    body2: "با ایجنت‌های کدنویسیِ هوش مصنوعی کار می‌کنم تا یک ایده را سریع به محصولِ زنده و قابل‌کلیک برسانم — لندینگ، پنل مدیریت و اپلیکیشن‌های لحظه‌ای. همه‌ی نمونه‌کارهای پایین لینکِ زنده دارند.",
     stats: {
-      years: "سال تجربه",
-      projects: "پروژه‌ی منتشرشده",
+      live: "پروژه‌ی آنلاین",
+      repos: "ریپازیتوریِ گیت‌هاب",
       stack: "استکِ اصلی",
     },
   },

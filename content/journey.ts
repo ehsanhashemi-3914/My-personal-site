@@ -1,41 +1,42 @@
 export interface Milestone {
-  year: string;
+  /** Shown as the date label; localised so Persian readers see the Solar Hijri month. */
+  year: { en: string; fa: string };
   title: { en: string; fa: string };
   body: { en: string; fa: string };
 }
 
-/** TODO replace with the real career timeline. */
+/** Real milestones, dated from the first commits of each project on GitHub. */
 export const journey: Milestone[] = [
   {
-    year: "2018",
-    title: { en: "First lines of code", fa: "اولین خط‌های کد" },
+    year: { en: "Jun 2026", fa: "خرداد ۱۴۰۵" },
+    title: { en: "First projects", fa: "اولین پروژه‌ها" },
     body: {
-      en: "Fell down the rabbit hole of the web — HTML, CSS and the moment a page first moved on its own.",
-      fa: "در سوراخِ خرگوشِ وب افتادم — HTML، CSS و لحظه‌ای که برای اولین‌بار یک صفحه خودش حرکت کرد.",
+      en: "Started building for the web in earnest — first pages and small browser games, learning by shipping.",
+      fa: "ساختن برای وب را جدی شروع کردم؛ اولین صفحه‌ها و بازی‌های کوچکِ مرورگری، یادگیری با ساختن و منتشر کردن.",
     },
   },
   {
-    year: "2020",
-    title: { en: "Into the framework era", fa: "ورود به عصرِ فریم‌ورک‌ها" },
+    year: { en: "Jul 2026", fa: "تیر ۱۴۰۵" },
+    title: { en: "Landing pages & shops", fa: "لندینگ‌ها و فروشگاه‌ها" },
     body: {
-      en: "Went all-in on React and TypeScript, shipping real products and learning to think in components and state.",
-      fa: "تمام‌قد وارد React و TypeScript شدم؛ محصولات واقعی منتشر کردم و یاد گرفتم مؤلفه‌ای و state-محور فکر کنم.",
+      en: "Shipped a run of responsive, animation-rich sites: a restaurant landing, e-commerce storefronts and an AI product page.",
+      fa: "مجموعه‌ای از سایت‌های واکنش‌گرا و پرانیمیشن منتشر کردم: لندینگ رستوران، فروشگاه‌های آنلاین و صفحه‌ی یک محصول هوش مصنوعی.",
     },
   },
   {
-    year: "2022",
-    title: { en: "The pull of 3D", fa: "کششِ سه‌بعدی" },
+    year: { en: "Aug 2026", fa: "مرداد ۱۴۰۵" },
+    title: { en: "3D, bilingual and AI tools", fa: "سه‌بعدی، دوزبانه و ابزارهای AI" },
     body: {
-      en: "Discovered WebGL, Three.js and GSAP — and started treating the browser as a real-time cinematic canvas.",
-      fa: "WebGL، Three.js و GSAP را کشف کردم و مرورگر را مثل یک بومِ سینماییِ بلادرنگ دیدم.",
+      en: "Built this 3D bilingual portfolio, a bilingual café site, and an AI tool that turns rough notes into narrated YouTube scripts.",
+      fa: "همین پورتفولیوی سه‌بعدی و دوزبانه، سایت دوزبانه‌ی کافه و ابزاری با هوش مصنوعی ساختم که یادداشت خام را به روایت صوتی یوتیوب تبدیل می‌کند.",
     },
   },
   {
-    year: "2024",
-    title: { en: "Experience-led engineering", fa: "مهندسیِ تجربه‌محور" },
+    year: { en: "Sep 2026", fa: "مهر ۱۴۰۵" },
+    title: { en: "Full products: real-time & admin", fa: "محصولِ کامل: لحظه‌ای و پنل مدیریت" },
     body: {
-      en: "Now I build immersive, performant sites end to end — where motion, 3D and architecture serve one story.",
-      fa: "حالا سایت‌های غوطه‌ور و پرفورمنس را سرتاسر می‌سازم؛ جایی که موشن، سه‌بعدی و معماری در خدمتِ یک روایت‌اند.",
+      en: "Designed two product concepts for Hills Project: a real-time community messenger and a member-matching platform with a full admin panel.",
+      fa: "برای پروژه هیلز دو محصول طراحی کردم: یک پیام‌رسانِ لحظه‌ای برای کامیونیتی و یک پلتفرم مچینگ اعضا با پنل مدیریت کامل.",
     },
   },
 ];

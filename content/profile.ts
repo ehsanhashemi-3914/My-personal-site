@@ -12,19 +12,16 @@ export const profile = {
   phone: { display: "0993 081 3843", tel: "+989930813843" },
   /** Portrait in the About section — replace the file, keep the path. */
   portrait: "/portrait.jpg",
-  /**
-   * Drop the PDF at public/resume.pdf and set this to "/resume.pdf" — the
-   * download button appears on its own. Empty means no button at all, which is
-   * better than a button that 404s.
-   */
-  resumeUrl: "",
+  /** Résumé PDFs in /public, one per locale. The download button uses the active locale. */
+  resumeUrl: { en: "/resume-en.pdf", fa: "/resume-fa.pdf" },
   githubUser: "ehsanhashemi-3914",
+  /** Only verifiable numbers: live demos and public GitHub repositories. */
   stats: {
-    years: 6,
-    projects: 40,
+    liveProjects: 10,
+    repos: 20,
     stackLabel: {
-      en: "Next.js · Node · Python · PostgreSQL",
-      fa: "Next.js · Node · Python · PostgreSQL",
+      en: "React · Next.js · Node.js · AI",
+      fa: "React · Next.js · Node.js · AI",
     },
   },
 } as const;

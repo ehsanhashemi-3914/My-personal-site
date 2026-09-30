@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useDict } from "@/lib/i18n/useDict";
+import { useDict, pick } from "@/lib/i18n/useDict";
 import { SectionShell } from "./SectionShell";
 import { Reveal } from "@/components/ui/Reveal";
 import { GlassPanel } from "@/components/ui/GlassPanel";
@@ -25,7 +25,7 @@ const fieldCls =
   "w-full border-b border-[var(--color-line)] bg-transparent py-3 text-[var(--color-hi)] outline-none transition-colors duration-300 placeholder:text-[var(--color-lo)] focus:border-[var(--color-mint)]";
 
 export function Contact() {
-  const { d } = useDict();
+  const { d, locale } = useDict();
   const [status, setStatus] = useState<Status>("idle");
   const {
     register,
@@ -205,8 +205,8 @@ export function Contact() {
 
             {profile.resumeUrl && (
               <a
-                href={profile.resumeUrl}
-                download
+                href={pick(profile.resumeUrl, locale)}
+                download={locale === "fa" ? "رزومه-سید-احسان-هاشمی.pdf" : "Seyed-Ehsan-Hashemi-Resume.pdf"}
                 data-cursor="hover"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-line-strong)] py-3.5 text-sm text-[var(--color-hi)] transition-colors duration-500 hover:border-[var(--color-mint)]/50 hover:bg-white/5"
               >

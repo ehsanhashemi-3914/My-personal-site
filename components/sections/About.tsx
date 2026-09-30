@@ -11,8 +11,8 @@ export function About() {
   const { d, locale } = useDict();
 
   const stats = [
-    { value: `${profile.stats.years}+`, label: d.about.stats.years },
-    { value: `${profile.stats.projects}+`, label: d.about.stats.projects },
+    { value: `${profile.stats.liveProjects}+`, label: d.about.stats.live },
+    { value: `${profile.stats.repos}+`, label: d.about.stats.repos },
     {
       value: pick(profile.stats.stackLabel, locale),
       label: d.about.stats.stack,
