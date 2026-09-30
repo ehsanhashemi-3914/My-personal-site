@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // The editor only exists in development, but say so anyway.
-      disallow: ["/admin", "/api/"],
+      disallow: ["/admin", "/api/", "/s/"],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
