@@ -4,12 +4,7 @@
     {
       "name": "personal-site",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "dev",
-        "--prefix",
-        "C:\\Users\\Farhad\\Desktop\\My personal Site"
-      ],
+      "runtimeArgs": ["run", "dev"],
       "port": 3000
     }
   ]

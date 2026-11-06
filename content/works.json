@@ -1,5 +1,92 @@
 [
   {
+    "slug": "school",
+    "title": {
+      "en": "School website ",
+      "fa": "نمونه سایت مدرسه"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "Professional website for school",
+      "fa": "نمونه سایت حرفه ای برای مدارس "
+    },
+    "description": {
+      "en": "",
+      "fa": ""
+    },
+    "price": {
+      "en": "80",
+      "fa": "12,000,000"
+    },
+    "tags": [],
+    "thumbnail": "/works/school.png?v=1793976914847",
+    "link": "https://honarestan-honarefarda-demo.vercel.app/",
+    "accent": [
+      "#6ee7d8",
+      "#8b7cf6"
+    ]
+  },
+  {
+    "slug": "cafe2",
+    "title": {
+      "en": "cafe restaurant ",
+      "fa": "کافه رستوران"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "",
+      "fa": "نمونه سایت برای کافه رستوران"
+    },
+    "description": {
+      "en": "",
+      "fa": ""
+    },
+    "price": {
+      "en": "70",
+      "fa": "10,000,000"
+    },
+    "tags": [],
+    "thumbnail": "/works/cafe.png?v=1793977283073",
+    "link": "https://farimrestautrrant.vercel.app/",
+    "accent": [
+      "#6ee7d8",
+      "#8b7cf6"
+    ]
+  },
+  {
+    "slug": "cafe",
+    "title": {
+      "en": "cafe Restaurant ",
+      "fa": "سایت کافه رستوران"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "The site is suitable for cafes and restaurants with a high design.",
+      "fa": "سایت مناسب برای کافه ها و رستوران ها می‌باشد با طراحی بالا"
+    },
+    "description": {
+      "en": "Maison Ember\nA cinematic marketing site for a fictional restaurant: a dining room built inside a 1924 coal merchant's hall in the old quarter. Dark, warm, architectural — the design direction is historic soul × modern luxury.\n\nFully bilingual: English (LTR) and Persian / فارسی (RTL), with mirrored layout, a separate typographic scale, and Eastern Arabic numerals throughout.",
+      "fa": "Maison Ember\nیک سایت بازاریابی سینمایی برای یک رستوران خیالی: یک اتاق غذاخوری که در داخل یک سالن تاجر زغال سنگ مربوط به سال ۱۹۲۴ در محله قدیمی ساخته شده است. تاریک، گرم، معماری - جهت طراحی، روح تاریخی × تجمل مدرن است.\n\nکاملاً دو زبانه: انگلیسی (چپ به راست) و فارسی / فارسی (راست به چپ)، با طرح آینه‌ای، مقیاس تایپوگرافی جداگانه و اعداد عربی شرقی در سراسر صفحه."
+    },
+    "price": {
+      "en": "From 250$",
+      "fa": "از ۲۵٬۰۰۰٬۰۰۰ "
+    },
+    "tags": [
+      "TypeScript",
+      "strict",
+      "Next.js",
+      "Tailwind CSS v4",
+      "JavaScript"
+    ],
+    "thumbnail": "/works/cafe.png?v=1786988976597",
+    "link": "https://cafe-restaurant-delta.vercel.app/fa",
+    "accent": [
+      "#6ee7d8",
+      "#8b7cf6"
+    ]
+  },
+  {
     "slug": "hills-connect",
     "title": {
       "en": "Hills Connect",
@@ -33,6 +120,36 @@
     ]
   },
   {
+    "slug": "clothing-shop",
+    "title": {
+      "en": "Site-Shop",
+      "fa": "سایت فروشگاهی"
+    },
+    "year": "1405",
+    "summary": {
+      "en": "Clothing store site.",
+      "fa": "سایت فروشگاهی پوشاک."
+    },
+    "description": {
+      "en": "This version is without backend; the actual order is not registered and no payment is made. All data is stored in the visitor's own browser.\n\nFor the real version, these are added: product and order management panel, payment gateway, warehouse and inventory, sending SMS, user account on the server, SEO.",
+      "fa": "این نسخه بدون بک‌اند است؛ سفارش واقعی ثبت نمی‌شود و پرداختی انجام نمی‌گیرد. همه داده‌ها در مرورگر خود بازدیدکننده ذخیره می‌شود.\n\nبرای نسخه واقعی این موارد اضافه می‌شود: پنل مدیریت محصول و سفارش، درگاه پرداخت، انبار و موجودی، ارسال پیامک، حساب کاربری روی سرور، سئو."
+    },
+    "price": {
+      "en": "From $300",
+      "fa": "از ۲۵٬۰۰۰٬۰۰۰ تومان"
+    },
+    "tags": [
+      "Design",
+      "Web"
+    ],
+    "thumbnail": "/works/clothing-shop.png",
+    "link": "https://ehsanhashemi-3914.github.io/Shop/",
+    "accent": [
+      "#153c38",
+      "#8b7cf6"
+    ]
+  },
+  {
     "slug": "hills-messenger",
     "title": {
       "en": "Hills Messenger",
@@ -63,36 +180,6 @@
     "accent": [
       "#9050fe",
       "#c600e0"
-    ]
-  },
-  {
-    "slug": "clothing-shop",
-    "title": {
-      "en": "Site-Shop",
-      "fa": "سایت فروشگاهی"
-    },
-    "year": "1405",
-    "summary": {
-      "en": "Clothing store site.",
-      "fa": "سایت فروشگاهی پوشاک."
-    },
-    "description": {
-      "en": "This version is without backend; the actual order is not registered and no payment is made. All data is stored in the visitor's own browser.\n\nFor the real version, these are added: product and order management panel, payment gateway, warehouse and inventory, sending SMS, user account on the server, SEO.",
-      "fa": "این نسخه بدون بک‌اند است؛ سفارش واقعی ثبت نمی‌شود و پرداختی انجام نمی‌گیرد. همه داده‌ها در مرورگر خود بازدیدکننده ذخیره می‌شود.\n\nبرای نسخه واقعی این موارد اضافه می‌شود: پنل مدیریت محصول و سفارش، درگاه پرداخت، انبار و موجودی، ارسال پیامک، حساب کاربری روی سرور، سئو."
-    },
-    "price": {
-      "en": "From $300",
-      "fa": "از ۲۵٬۰۰۰٬۰۰۰ تومان"
-    },
-    "tags": [
-      "Design",
-      "Web"
-    ],
-    "thumbnail": "/works/clothing-shop.png",
-    "link": "https://ehsanhashemi-3914.github.io/Shop/",
-    "accent": [
-      "#153c38",
-      "#8b7cf6"
     ]
   },
   {
@@ -219,33 +306,27 @@
     ]
   },
   {
-    "slug": "cafe",
+    "slug": "school2",
     "title": {
-      "en": "cafe Restaurant ",
-      "fa": "سایت کافه رستوران"
+      "en": "School website",
+      "fa": "سایت مدرسه"
     },
     "year": "1405",
     "summary": {
-      "en": "The site is suitable for cafes and restaurants with a high design.",
-      "fa": "سایت مناسب برای کافه ها و رستوران ها می‌باشد با طراحی بالا"
+      "en": "",
+      "fa": "سایت برای مدارس"
     },
     "description": {
-      "en": "Maison Ember\nA cinematic marketing site for a fictional restaurant: a dining room built inside a 1924 coal merchant's hall in the old quarter. Dark, warm, architectural — the design direction is historic soul × modern luxury.\n\nFully bilingual: English (LTR) and Persian / فارسی (RTL), with mirrored layout, a separate typographic scale, and Eastern Arabic numerals throughout.",
-      "fa": "Maison Ember\nیک سایت بازاریابی سینمایی برای یک رستوران خیالی: یک اتاق غذاخوری که در داخل یک سالن تاجر زغال سنگ مربوط به سال ۱۹۲۴ در محله قدیمی ساخته شده است. تاریک، گرم، معماری - جهت طراحی، روح تاریخی × تجمل مدرن است.\n\nکاملاً دو زبانه: انگلیسی (چپ به راست) و فارسی / فارسی (راست به چپ)، با طرح آینه‌ای، مقیاس تایپوگرافی جداگانه و اعداد عربی شرقی در سراسر صفحه."
+      "en": "",
+      "fa": ""
     },
     "price": {
-      "en": "From 250$",
-      "fa": "از ۲۵٬۰۰۰٬۰۰۰ "
+      "en": "85",
+      "fa": "14,000,000"
     },
-    "tags": [
-      "TypeScript",
-      "strict",
-      "Next.js",
-      "Tailwind CSS v4",
-      "JavaScript"
-    ],
-    "thumbnail": "/works/cafe.png?v=1786988976597",
-    "link": "https://cafe-restaurant-delta.vercel.app/fa",
+    "tags": [],
+    "thumbnail": "/works/school2.png?v=1793977554398",
+    "link": "https://honarestan-maede-demo.vercel.app/",
     "accent": [
       "#6ee7d8",
       "#8b7cf6"
